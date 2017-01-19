@@ -7,15 +7,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpModule, Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable} from "rxjs/Observable";
+import { YoMoFoComponent } from './yo-mo-fo/yo-mo-fo';
 
 @Component({
     selector: 'http-client',
-    template: `<h1>All Products</h1>
+    template: `<h1>All Products - Bloise AWS NodeJS with AngularJS</h1>
   <ul>
     <li *ngFor="let product of products">
        {{product.title}}
     </li>
   </ul>
+  <yo-mo-fo></yo-mo-fo>
   `})
 class AppComponent {
 
@@ -50,7 +52,7 @@ class AppComponent {
 @NgModule({
     imports:      [ BrowserModule,
         HttpModule],
-    declarations: [ AppComponent],
+    declarations: [ AppComponent, YoMoFoComponent],
     bootstrap:    [ AppComponent ]
 })
 class AppModule { }

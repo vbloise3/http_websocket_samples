@@ -4,7 +4,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: "./build/hello_server",
+    entry: "./build/auction-rest-server-angular",
     output: {
         path: './dist',
         filename: 'bundle.js'
