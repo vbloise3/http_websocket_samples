@@ -22,7 +22,7 @@ System.config({
         }
     },
     packages: {
-        'app'                              : {main: 'main-with-service', defaultExtension: 'ts'},
+        'app'                              : {main: 'main-asyncpipe', defaultExtension: 'ts'},
         'rxjs'                             : {main: 'Rx'},
         '@angular/core'                    : {main: 'core.umd.min.js'},
         '@angular/common'                  : {main: 'common.umd.min.js'},
