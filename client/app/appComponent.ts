@@ -1,16 +1,12 @@
 /**
- * Created by vincebloise on 1/18/17.
+ * Created by vincebloise on 1/19/17.
  */
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { NgModule, Component }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import {HttpModule, Http} from '@angular/http';
+import { Component }      from '@angular/core';
+import { Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable} from "rxjs/Observable";
-import { YoMoFoComponent } from './yo-mo-fo/yo-mo-fo';
-import { AppComponent } from './appComponent';
 
-/*@Component({
+@Component({
     selector: 'http-client',
     template: `<h1>All Products - Bloise AWS NodeJS with AngularJS</h1>
   <ul>
@@ -20,7 +16,7 @@ import { AppComponent } from './appComponent';
   </ul>
   <yo-mo-fo></yo-mo-fo>
   `})
-class AppComponent {
+export class AppComponent {
 
     products: Array<string> = [];
 
@@ -48,14 +44,4 @@ class AppComponent {
             () => console.log('Product(s) are retrieved')
         );
     }
-}*/
-
-@NgModule({
-    imports:      [ BrowserModule,
-        HttpModule],
-    declarations: [ AppComponent, YoMoFoComponent],
-    bootstrap:    [ AppComponent ]
-})
-class AppModule { }
-
-platformBrowserDynamic().bootstrapModule(AppModule);
+}

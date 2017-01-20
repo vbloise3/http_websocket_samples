@@ -31,6 +31,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/main.html'));
 });
 
+app.get('/vbloise', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/app/vbloise.html'));
+});
+
 app.get('/products', (req, res) => {
     res.json(getProducts());
 });
