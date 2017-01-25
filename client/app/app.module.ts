@@ -14,12 +14,14 @@ import HomeComponent from './home/home';
 import { routing } from './app.routing';
 import { MaterialModule } from '@angular/material';
 import 'node_modules/hammerjs/hammer.js';
+import {Material2AppAppComponent, DialogContent} from './app.component/app.component';
 
 
 @NgModule({
     imports:      [ BrowserModule, ReactiveFormsModule,
         HttpModule, routing, MaterialModule.forRoot()],
-    declarations: [ AppComponent, HomeComponent, YoMoFoComponent],
+    declarations: [ AppComponent, HomeComponent, YoMoFoComponent, Material2AppAppComponent, DialogContent],
+    entryComponents: [DialogContent],
     providers:    [
         {provide: LocationStrategy, useClass: HashLocationStrategy}],
     bootstrap:    [ AppComponent ]
