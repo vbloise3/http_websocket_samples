@@ -3,7 +3,7 @@
     <div class="row">
         <ul>
             <li *ngFor="let product of products | async">
-                {{product.title}}
+                {{product.title}} &emsp;&emsp; id: {{productId}} &emsp;&emsp; randomness: {{randomness}}
             </li>
         </ul>
         <h2>{{errorMessage}}</h2>

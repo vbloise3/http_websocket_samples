@@ -11,17 +11,12 @@ import 'rxjs/add/operator/map';
 import { YoMoFoComponent } from './yo-mo-fo/yo-mo-fo';
 import AppComponent from './appComponent/appComponent';
 import HomeComponent from './home/home';
+import { routing } from './app.routing';
 
 
 @NgModule({
     imports:      [ BrowserModule, ReactiveFormsModule,
-        HttpModule,
-        RouterModule.forRoot([
-            {path: '',                    component: HomeComponent},
-            {path: 'products/:productId', component: HomeComponent},
-            {path: 'yo', component: YoMoFoComponent},
-            {path: 'dbaa', component: HomeComponent}
-        ])],
+        HttpModule, routing],
     declarations: [ AppComponent, HomeComponent, YoMoFoComponent],
     providers:    [
         {provide: LocationStrategy, useClass: HashLocationStrategy}],

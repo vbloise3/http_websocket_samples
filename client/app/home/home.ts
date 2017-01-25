@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/empty';
 import { Observable} from "rxjs/Observable";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'http-client',
@@ -19,8 +20,14 @@ export default class HomeComponent {
 
     products: Observable<Array<string>>;
     errorMessage: string;
+    productId: Number;
+    randomness: Number;
 
-    constructor(private http: Http) {
+    getRandomNumber(): number {
+        return Math.random();
+    }
+
+    constructor(private http: Http, route: ActivatedRoute) {
 
         this.products = this.http.get('/products')
             .map(res => res.json())
@@ -28,5 +35,7 @@ export default class HomeComponent {
                 this.errorMessage =`Can't get product details from ${err.url}, error ${err.status} `;
                 return Observable.empty();
             });
+        this.productId = route.snapshot.params['id'];
+        this.randomness = this.getRandomNumber();
     }
 }
