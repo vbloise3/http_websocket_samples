@@ -10,9 +10,11 @@ System.config({
         module: "commonjs"},
     map: {
         '@angular': 'node_modules/@angular',
-        'rxjs'    : 'node_modules/rxjs'
+        'rxjs'    : 'node_modules/rxjs',
+        '@angular/material': 'node_modules/@angular/material/bundles/material.umd.js'
     },
     paths: {
+        'node_modules/@angular/material/*': 'node_modules/@angular/material/bundles/material.umd.js',
         'node_modules/@angular/*': 'node_modules/@angular/*/bundles'
     },
     meta: {

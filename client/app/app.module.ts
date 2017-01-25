@@ -12,11 +12,13 @@ import { YoMoFoComponent } from './yo-mo-fo/yo-mo-fo';
 import AppComponent from './appComponent/appComponent';
 import HomeComponent from './home/home';
 import { routing } from './app.routing';
+import { MaterialModule } from '@angular/material';
+import 'node_modules/hammerjs/hammer.js';
 
 
 @NgModule({
     imports:      [ BrowserModule, ReactiveFormsModule,
-        HttpModule, routing],
+        HttpModule, routing, MaterialModule.forRoot()],
     declarations: [ AppComponent, HomeComponent, YoMoFoComponent],
     providers:    [
         {provide: LocationStrategy, useClass: HashLocationStrategy}],
