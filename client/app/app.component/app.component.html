@@ -62,9 +62,13 @@
 
         <md-card>
             <md-list class="app-list">
-                <md-list-item *ngFor="let food of foods">
+                <!--md-list-item *ngFor="let food of foods">
                     <h3 md-line>{{food.name}}</h3>
                     <p md-line class="demo-secondary-text">{{food.rating}}</p>
+                </md-list-item-->
+                <md-list-item *ngFor="let product of products | async">
+                    <h3 md-line>{{product.title}}</h3>
+                    <p md-line class="demo-secondary-text"><span *ngIf="productId">id: {{productId}}</span></p>
                 </md-list-item>
             </md-list>
         </md-card>
@@ -116,9 +120,10 @@
         </md-card>
 
         <md-menu #menu="mdMenu">
-            <button md-menu-item>Lemon</button>
+            <!--button md-menu-item>Lemon</button>
             <button md-menu-item>Lime</button>
-            <button md-menu-item>Banana</button>
+            <button md-menu-item>Banana</button-->
+            <button md-menu-item  *ngFor="let product of products | async" (click)="select(product.title)" [disabled]="product.disabled">{{product.title}}</button>
         </md-menu>
 
         <md-card>

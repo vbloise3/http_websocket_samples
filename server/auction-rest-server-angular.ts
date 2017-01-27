@@ -17,10 +17,11 @@ class Product {
 }
 
 const products = [
-    new Product(0, "First Product", 24.99),
-    new Product(1, "Second Product", 64.99),
-    new Product(2, "Third Product", 74.99),
-    new Product(3, "dbaa product", 99.99)
+    new Product(0, "Regulator", 64.99),
+    new Product(1, "Solar Panel", 184.99),
+    new Product(2, "Battery", 254.99),
+    new Product(3, "ARB Fridge", 1099.99),
+    new Product(4, "Generator", 299.99)
 ];
 
 function getProducts(): Product[] {

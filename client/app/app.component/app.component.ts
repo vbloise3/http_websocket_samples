@@ -1,18 +1,39 @@
 /**
  * Created by vincebloise on 1/25/17.
  */
-import {Component, Optional} from '@angular/core';
+import {Component, Optional, ViewEncapsulation} from '@angular/core';
 import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
-
+import { Http, HttpModule} from '@angular/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/empty';
+import { Observable} from "rxjs/Observable";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'material2-app-app',
     templateUrl: 'app/app.component/app.component.html',
     styleUrls: ['app/app.component/app.component.css'],
+    encapsulation:ViewEncapsulation.None
 })
 export class Material2AppAppComponent {
     isDarkTheme: boolean = false;
     lastDialogResult: string;
+
+    products: Observable<Array<string>>;
+    errorMessage: string;
+    productId: Number;
+    randomness: Number;
+    selected = '';
+
+    getRandomNumber(): number {
+        return Math.random();
+    }
+
+    select(text: string) {
+        this.selected = text;
+        this.lastDialogResult = text;
+    }
 
     foods: any[] = [
         {name: 'Pizza', rating: 'Excellent'},
@@ -22,7 +43,15 @@ export class Material2AppAppComponent {
 
     progress: number = 0;
 
-    constructor(private _dialog: MdDialog, private _snackbar: MdSnackBar) {
+    constructor(private _dialog: MdDialog, private _snackbar: MdSnackBar, private http: Http, route: ActivatedRoute) {
+        this.products = this.http.get('/products')
+            .map(res => res.json())
+            .catch( err => {
+                this.errorMessage =`Can't get product details from ${err.url}, error ${err.status} `;
+                return Observable.empty();
+            });
+        this.productId = route.snapshot.params['id'];
+        this.randomness = this.getRandomNumber();
         // Update the value for the progress-bar on an interval.
         setInterval(() => {
             this.progress = (this.progress + Math.floor(Math.random() * 4) + 1) % 100;
