@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'material2-app-app',
-    templateUrl: 'app/app.component/app.component.html',
+    templateUrl: 'app/app.component/app.component2.html',
     styleUrls: ['app/app.component/app.component.css'],
     encapsulation:ViewEncapsulation.None
 })
