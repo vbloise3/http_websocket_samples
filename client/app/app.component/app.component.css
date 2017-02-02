@@ -97,6 +97,11 @@ md-toolbar {
     bottom: -1em;
 }
 
+.iconBottom {
+    position: relative;
+    bottom: -0.25em;
+}
+
 .xxLargerFont {
     font-size: xx-large;
 }
