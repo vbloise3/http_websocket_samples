@@ -102,6 +102,21 @@ md-toolbar {
     bottom: -0.25em;
 }
 
+.iconNearBottom {
+    position: relative;
+    padding-right: 0.25em;
+    bottom: -0.15em;
+    color: #ffcc00;
+}
+
+.iconPositionHeader {
+    position: relative;
+    padding-right: 0.25em;
+    padding-left: 0.15em;
+    bottom: -0.15em;
+    color: #ffcc00;
+}
+
 .xxLargerFont {
     font-size: xx-large;
 }
@@ -109,4 +124,46 @@ md-toolbar {
 .centerText {
     position: relative;
     left: 5em;
+}
+
+.bullet11 {
+    font-family: "Times New Roman";
+    font-size: 1.5em;
+    padding: 0.25em;
+}
+
+.bigPositionHeader {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.tdTabed {
+    margin-right: 2em;
+}
+
+.bullet11TopPadded {
+    font-family: "Times New Roman";
+    font-size: 1.5em;
+    padding: 0.25em;
+    padding-top: 1em;
+    /*padding-left: 2em;
+    text-indent: -2em;*/
+}
+
+ul {
+    text-align: left;
+}
+
+.h1Indigo {
+    color: indigo;
+}
+
+.h1Underlined {
+    width: 50em;
+    text-decoration: underline;
+}
+
+.h1Italics {
+    width: 50em;
+    font-style: italic;
 }
